@@ -1,0 +1,4 @@
+2023/06/08 08:05:07 [error] 29#29: *1 directory index of "/app/frontend/web/" is forbidden, client: 172.18.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:8059"
+2023/06/08 08:05:30 [error] 29#29: *1 directory index of "/app/frontend/web/" is forbidden, client: 172.18.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:8059"
+2023/06/08 08:08:41 [error] 31#31: *3 no resolver defined to resolve hh_php, client: 172.18.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:8059"
+2023/06/08 08:10:21 [error] 33#33: *6 no resolver defined to resolve hh_php, client: 172.18.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:8059"

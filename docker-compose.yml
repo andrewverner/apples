@@ -1,0 +1,43 @@
+version: '3.5'
+
+networks:
+  app_network:
+    name: app_network
+    driver: bridge
+
+services:
+
+  php:
+    container_name: hh_php
+    build:
+      context: ./docker/php
+    networks:
+      - app_network
+    volumes:
+      - ./:/app
+
+  nginx:
+    container_name: hh_nginx
+    image: nginx:latest
+    networks:
+      - app_network
+    ports:
+      - 8059:80
+    volumes:
+      - ./:/app
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  mysql:
+    container_name: hh_db
+    image: mysql:5.7
+    ports:
+      - 3359:3306
+    networks:
+      - app_network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: hh
+      MYSQL_USER: hhuser
+      MYSQL_PASSWORD: password
